@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="channels_array">
+        <item>101 BBC1</item>
+        <item>102 BBC2</item>
+        <item>103 ITV</item>
+        <item>104 Channel4</item>
+        <item>105 Five</item>
+        <item>106 BBC3</item>
+        <item>107 BBC4</item>
+        <item>108 BBC1 HD</item>
+        <item>109 Sky1</item>
+        <item>110 Sky1 HD</item>
+        <item>111 Living1</item>
+        <item>112 Living1 HD</item>
+        <item>113 ITV HD</item>
+        <item>114 ITV+1</item>
+        <item>115 ITV2</item>
+        <item>116 ITV2+1</item>
+        <item>117 ITV3</item>
+        <item>118 ITV4</item>
+        <item>119 ITVBe</item>
+        <item>120 ITVBe+1</item>
+        <item>121 Sky2</item>
+        <item>122 Sky Livit</item>
+        <item>123 Pick</item>
+        <item>124 Watch</item>
+        <item>125 Watch+1</item>
+        <item>126 Gold</item>
+        <item>127 Gold+1</item>
+        <item>128 Dave</item>
+        <item>129 Dave va ju</item>
+        <item>130 Alibi</item>
+        <item>131 Alibi+1</item>
+        <item>132 Comedy Central</item>
+        <item>133 Comedy Central+1</item>
+        <item>134 MTV</item>
+        <item>135 SyFy</item>
+        <item>136 SyFy_1</item>
+        <item>137 Universal</item>
+        <item>138 Universal+1</item>
+        <item>139 Challenge</item>
+        <item>140 Sky Living_1</item>
+        <item>142 Channel 4 HD</item>
+        <item>143 Channel 4+1</item>
+        <item>144 E4</item>
+        <item>145 E4 HD</item>
+        <item>146 E4+1</item>
+        <item>147 More4</item>
+        <item>148 CBS Reality</item>
+        <item>149 Horror</item>
+        <item>150 Five HD</item>
+        <item>151 5*</item>
+        <item>152 Five+24</item>
+        <item>153 5 USA</item>
+        <item>154 5 USA+1</item>
+        <item>155 Five+1</item>
+        <item>156 E!</item>
+        <item>157 Fox</item>
+        <item>158 Fox+</item>
+        <item>159 Sky Livit+1</item>
+        <item>160 Challenge+1</item>
+        <item>161 BBC Alba</item>
+        <item>162 BBC2 HD</item>
+        <item>163 BBC3 HD</item>
+        <item>164 BBC4 HD</item>
+        <item>165 Syfy HD</item>
+        <item>166 S4C</item>
+        <item>167 TLC</item>
+        <item>168 TLC HD</item>
+        <item>169 TLC+1</item>
+        <item>170 DMAX</item>
+        <item>171 DMAX+1</item>
+        <item>172 Quest</item>
+        <item>173 Quest+1</item>
+        <item>174 ITV3+1</item>
+        <item>175 ITV4+1</item>
+        <item>176 ITV2 HD</item>
+        <item>177 ITV3 HD</item>
+        <item>178 ITV4 HD</item>
+        <item>179 ITVBe HD</item>
+        <item>180 Challenge+1</item>
+        <item>181 Comedy Central HD</item>
+        <item>182 Comedy Central Xtra</item>
+        <item>183 MTV HD</item>
+        <item>184 BET</item>
+        <item>189 True Entertainment</item>
+        <item>190 Drama</item>
+        <item>191 Watch HD</item>
+        <item>192 CBS Action</item>
+        <item>193 SONY TV</item>
+        <item>194 Dave HD</item>
+        <item>195 4Seven</item>
+        <item>196 More4+1</item>
+        <item>197 CBS Drama</item>
+        <item>198 Youtube</item>
+        <item>199 FOX HD</item>
+        <item>200 Alibi HD</item>
+        <item>201 Reality+1</item>
+        <item>202 Horror+1</item>
+        <item>203 More4 HD</item>
+        <item>204 Netflix</item>
+        <item>206 Yesterday</item>
+        <item>207 Yesterday+1</item>
+        <item>208 Eden</item>
+        <item>209 Eden+1</item>
+        <item>210 Eden HD</item>
+        <item>211 Discovery</item>
+        <item>212 Discovery HD</item>
+        <item>213 Discovery+1</item>
+        <item>214 I.D.</item>
+        <item>215 I.D.+1</item>
+        <item>216 Animal Planet</item>
+        <item>217 Animal Planet HD</item>
+        <item>218 Animal Planet+1</item>
+        <item>219 Discovery Science</item>
+        <item>220 Discovery Science+1</item>
+        <item>221 Discovery Turbo</item>
+        <item>222 Discovery History</item>
+        <item>223 Discovery History+1</item>
+        <item>228 National Geographic Wild</item>
+        <item>230 National Geographic</item>
+        <item>231 National Geographic+1</item>
+        <item>232 National Geographic HD</item>
+        <item>233 Community</item>
+        <item>234 History</item>
+        <item>235 History+1</item>
+        <item>236 History2</item>
+        <item>237 CI</item>
+        <item>242 Lifetime</item>
+        <item>243 PBS America</item>
+        <item>244 Forces TV</item>
+        <item>260 Good Food</item>
+        <item>261 Good Food+1</item>
+        <item>262 Good Food HD</item>
+        <item>265 Home</item>
+        <item>266 Home+1</item>
+        <item>267 Really</item>
+        <item>271 Home and Health</item>
+        <item>272 Home and Health+1</item>
+        <item>273 Discovery Shed.</item>
+        <item>279 God Channel</item>
+        <item>281 Sky Arts1</item>
+        <item>282 Sky Arts1 HD</item>
+        <item>283 Sky Arts2</item>
+        <item>284 Sky Arts2 HD</item>
+        <item>286 GINX</item>
+        <item>287 Food Network</item>
+        <item>288 Travel Channel</item>
+        <item>289 Africa Channel</item>
+        <item>300 Virgin Music OD</item>
+        <item>301 Virgin Music Takeover</item>
+        <item>302 Virgin Music Hits</item>
+        <item>303 Virgin Music Urban</item>
+        <item>304 Virgin Music Rocks</item>
+        <item>305 Virgin Music Dance</item>
+        <item>306 Virgin Music Playlist</item>
+        <item>310 MTV Music</item>
+        <item>311 MTV Music Live HD</item>
+        <item>312 MTV Hits</item>
+        <item>313 MTV Base</item>
+        <item>314 MTV Dance</item>
+        <item>315 MTV Rocks</item>
+        <item>316 VH1</item>
+        <item>317 Viva</item>
+        <item>330 4Music</item>
+        <item>335 The Box</item>
+        <item>336 Kiss</item>
+        <item>337 Smash Hits</item>
+        <item>338 Heat</item>
+        <item>340 Magic</item>
+        <item>342 Kerrang</item>
+        <item>342 Vintage TV</item>
+        <item>400 Virgin Movies Previews</item>
+        
+    </string-array>
+</resources>

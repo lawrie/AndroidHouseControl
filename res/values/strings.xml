@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidHouseControl</string>
+    <string name="living_room">Living Room</string>
+    <string name="electricity">Electricity</string>
+    <string name="master_bedroom">Master Bedroom</string>
+    <string name="action_settings">Settings</string>
+    <string name="speech_control">Speech Control</string>
+    <string name="hall">Hall</string>
+    <string name="dining_room">Dining Room</string>
+    <string name="kitchen">Kitchen</string>
+    <string name="bedroom">Bedroom</string>
+    <string name="landing">Landing</string>
+    <string name="garden">Garden</string>
+    <string name="text_control">Text Control</string>
+    <string name="front_door">Front Door</string>
+    <string name="ground_floor">Grounf Floor</string>
+    <string name="first_floor">First Floor</string>
+    <string name="second_floor">Second Floor</string>
+    <string name="tv_remote">TV Remote</string>
+    <string name="intro">Press the button to speak!</string>
+    <string name="speech">Speak now!</string>
+    <string name="word_intro">Suggested words&amp;#8230;</string>
+    <string name="rooms">Rooms</string>
+    <string name="temperature">Temperature</string>
+
+</resources>

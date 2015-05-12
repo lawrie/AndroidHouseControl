@@ -1,0 +1,139 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="net.geekgrandad.androidhousecontrol.TextCommandFragment" >
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner1"
+        android:text="Select" />
+    
+    <Button
+        android:id="@+id/onOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/gridLayout1"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/select"
+        android:text="On/Off" />
+
+    <Button
+        android:id="@+id/mute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/gridLayout1"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/onOff"
+        android:text="Mute" />
+
+    <GridLayout
+        android:id="@+id/gridLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/select"
+        android:columnCount="2"
+        android:rowCount="7" >
+
+        <Button
+            android:id="@+id/volumeDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="left|top"
+            android:layout_marginTop="14dp"
+            android:layout_row="1"
+            android:text="Volume Down" />
+
+        <Button
+            android:id="@+id/volumeUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="1"
+            android:text="Volume Up" />
+
+	    <Button
+	        android:id="@+id/left"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_column="0"
+	        android:layout_gravity="left|bottom"
+	        android:layout_row="3"
+	        android:text="Left" />
+	
+	    <Button
+	        android:id="@+id/right"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_column="1"
+	        android:layout_gravity="left|top"
+	        android:layout_row="3"
+	        android:text="Right" />
+	
+	    <Button
+	        android:id="@+id/channelDown"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_column="1"
+	        android:layout_gravity="left|top"
+	        android:layout_row="2"
+	        android:text="Channel Down" />
+	
+	    <Button
+	        android:id="@+id/channelUp"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_column="0"
+	        android:layout_gravity="center_horizontal|top"
+	        android:layout_row="2"
+	        android:text="Channel Up" />
+	
+	    <Button
+	        android:id="@+id/up"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_column="0"
+	        android:layout_gravity="left|top"
+	        android:layout_row="4"
+	        android:text="Up" />
+	
+	    <Button
+	        android:id="@+id/ok"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_column="0"
+	        android:layout_gravity="left|bottom"
+	        android:layout_marginTop="57dp"
+	        android:layout_row="4"
+	        android:text="OK" />
+	
+	    <Button
+	        android:id="@+id/down"
+	        android:layout_column="1"
+	        android:layout_gravity="left|top"
+	        android:layout_row="4"
+	        android:text="Down" />
+	
+	    <Button
+	        android:id="@+id/tvOnOff"
+	        android:layout_column="1"
+	        android:layout_gravity="left|bottom"
+	        android:layout_row="4"
+	        android:text="TV On/Off" />
+    </GridLayout>
+</RelativeLayout>
