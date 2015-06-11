@@ -37,6 +37,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -539,7 +540,9 @@ public class MainActivity extends Activity {
 	 */
 	public static class TVRemoteFragment extends Fragment implements OnClickListener {
 		private static final String ARG_SECTION_NUMBER = "section_number";
-		private Button select, onOff, mute, left, right, up, down, ok, channelUp, channelDown, volumeUp, volumeDown, tvOnOff;
+		private Button select, onOff, mute, channelUp, channelDown, volumeUp, volumeDown, tvOnOff, ok, stop, 
+		               tv, home, clear, back, shows, info, guide, skipf, skipb, record, subtitles;
+		private ImageButton left, right, up, down, play, pause, ff, fb;
 		private Spinner spinner;
 		Context context;
 		
@@ -573,16 +576,49 @@ public class MainActivity extends Activity {
 			channelDown.setOnClickListener(this);
 			ok = (Button) rootView.findViewById(R.id.ok);
 			ok.setOnClickListener(this);
-			left = (Button) rootView.findViewById(R.id.left);
+			left = (ImageButton) rootView.findViewById(R.id.left);
 			left.setOnClickListener(this);
-			right = (Button) rootView.findViewById(R.id.right);
+			right = (ImageButton) rootView.findViewById(R.id.right);
 			right.setOnClickListener(this);
-			up = (Button) rootView.findViewById(R.id.up);
+			up = (ImageButton) rootView.findViewById(R.id.up);
 			up.setOnClickListener(this);
-			down = (Button) rootView.findViewById(R.id.down);
+			down = (ImageButton) rootView.findViewById(R.id.down);
 			down.setOnClickListener(this);
 			tvOnOff = (Button) rootView.findViewById(R.id.tvOnOff);
 			tvOnOff.setOnClickListener(this);
+			play = (ImageButton) rootView.findViewById(R.id.play);
+			play.setOnClickListener(this);
+			pause = (ImageButton) rootView.findViewById(R.id.pause);
+			pause.setOnClickListener(this);
+			stop = (Button) rootView.findViewById(R.id.stop);
+			stop.setOnClickListener(this);
+			ff = (ImageButton) rootView.findViewById(R.id.ff);
+			ff.setOnClickListener(this);
+			fb = (ImageButton) rootView.findViewById(R.id.fb);
+			fb.setOnClickListener(this);
+			tv = (Button) rootView.findViewById(R.id.tv);
+			tv.setOnClickListener(this);
+			home = (Button) rootView.findViewById(R.id.home);
+			home.setOnClickListener(this);
+			clear = (Button) rootView.findViewById(R.id.clear);
+			clear.setOnClickListener(this);
+			back = (Button) rootView.findViewById(R.id.back);
+			back.setOnClickListener(this);
+			shows = (Button) rootView.findViewById(R.id.shows);
+			shows.setOnClickListener(this);
+			info = (Button) rootView.findViewById(R.id.info);
+			info.setOnClickListener(this);
+			guide = (Button) rootView.findViewById(R.id.guide);
+			guide.setOnClickListener(this);
+			skipf = (Button) rootView.findViewById(R.id.skipf);
+			skipf.setOnClickListener(this);
+			skipb = (Button) rootView.findViewById(R.id.skipb);
+			skipb.setOnClickListener(this);
+			record = (Button) rootView.findViewById(R.id.record);
+			record.setOnClickListener(this);
+			subtitles = (Button) rootView.findViewById(R.id.subtitles);
+			subtitles.setOnClickListener(this);
+			
 			
 			context = container.getContext();
 			
@@ -629,7 +665,39 @@ public class MainActivity extends Activity {
 				value = "vt on";
 			} else if (v.getId() == R.id.tvOnOff) {
 				value = "tv on";
-			} 
+			} else if (v.getId() == R.id.play) {
+				value = "vt play";
+			} else if (v.getId() == R.id.pause) {
+				value = "vt pause";
+			} else if (v.getId() == R.id.stop) {
+				value = "vt stop";
+			} else if (v.getId() == R.id.ff) {
+				value = "vt ff";
+			} else if (v.getId() == R.id.fb) {
+				value = "vt fb";
+			} else if (v.getId() == R.id.tv) {
+				value = "vt tv";
+			} else if (v.getId() == R.id.home) {
+				value = "vt home";
+			} else if (v.getId() == R.id.clear) {
+				value = "vt clear";
+			} else if (v.getId() == R.id.back) {
+				value = "vt back";
+			} else if (v.getId() == R.id.shows) {
+				value = "vt shows";
+			} else if (v.getId() == R.id.info) {
+				value = "vt info";
+			} else if (v.getId() == R.id.guide) {
+				value = "vt guide";
+			} else if (v.getId() == R.id.skipf) {
+				value = "vt skipf";
+			} else if (v.getId() == R.id.skipb) {
+				value = "vt skipb";
+			} else if (v.getId() == R.id.record) {
+				value = "vt record";
+			} else if (v.getId() == R.id.subtitles) {
+				value = "vt subtitles";
+			}
 				
 			HouseCommand house = (HouseCommand) new HouseCommand().execute(value,"0", "4");
 			
