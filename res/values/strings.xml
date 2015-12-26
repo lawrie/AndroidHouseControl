@@ -24,5 +24,8 @@
     <string name="word_intro">Suggested words&amp;#8230;</string>
     <string name="rooms">Rooms</string>
     <string name="temperature">Temperature</string>
+    <string name="utility_room">Utility Room</string>
+    <string name="second_bedroom">Second Bedroom</string>
+    <string name="bathroom">Bathroom</string>
 
 </resources>

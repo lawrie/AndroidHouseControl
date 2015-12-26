@@ -116,6 +116,13 @@ public class MainActivity extends Activity {
 	 * one of the sections/tabs/pages.
 	 */
 	public class SectionsPagerAdapter extends FragmentPagerAdapter {
+		
+		private static final int TEXT_COMMAND = 9;
+		private static final int SPEECH_COMMAND = 10;
+		private static final int STREAMING = 11;
+		private static final int MAP = 12;
+		private static final int TV_REMOTE = 13;
+		private static final int ROOMS = 14;
 
 		public SectionsPagerAdapter(FragmentManager fm) {
 			super(fm);
@@ -123,24 +130,26 @@ public class MainActivity extends Activity {
 
 		@Override
 		public Fragment getItem(int position) {
-			if (position == 4) return TextCommandFragment.newInstance(position);
-			else if (position == 5) return SpeechCommandFragment.newInstance(position);
-			else if (position == 6) return StreamingFragment.newInstance(position);
-			else if (position == 7) return MapFragment.newInstance(position);
-			else if (position == 8) return TVRemoteFragment.newInstance(position);
-			else if (position == 9) return RoomFragment.newInstance(position);
+			if (position == TEXT_COMMAND) return TextCommandFragment.newInstance(position);
+			else if (position == SPEECH_COMMAND) return SpeechCommandFragment.newInstance(position);
+			else if (position == STREAMING) return StreamingFragment.newInstance(position);
+			else if (position == MAP) return MapFragment.newInstance(position);
+			else if (position == TV_REMOTE) return TVRemoteFragment.newInstance(position);
+			else if (position == ROOMS) return RoomFragment.newInstance(position);
 			else return DataTableFragment.newInstance(position);
 		}
 
 		@Override
 		public int getCount() {
-			return 10;
+			return 15;
 		}
 
 		@Override
 		public CharSequence getPageTitle(int position) {
 			int[] ids = {R.string.living_room, R.string.electricity, R.string.master_bedroom, 
-					R.string.hall, R.string.text_control, R.string.speech_control, R.string.front_door, 
+					R.string.hall, R.string.landing, R.string.utility_room, R.string.kitchen, 
+					R.string.second_bedroom, R.string.bathroom, R.string.text_control, 
+					R.string.speech_control, R.string.front_door, 
 					R.string.first_floor, R.string.tv_remote,R.string.temperature};
 			Locale l = Locale.getDefault();
 			return getString(ids[position]).toUpperCase(l);
@@ -179,10 +188,11 @@ public class MainActivity extends Activity {
 			{"Dish washer","dishwasher value", ""},
 			{"Dryer","dryer value", ""},
 		    {"Games", "xbox value", ""},
-		    {"Bedroom media", "bedmedia value", ""}};
+		    {"Bedroom media", "bedmedia value", ""},
+		    {"Fridge", "fridge value", ""}};
 	
 		private static String[][] masterBedroom = {
-			{"Temperature", "temperature 1",""},
+			{"Temperature", "radio temperature",""},
 			{"Humidity", "humidity 1", ""},
 			{"Occupied","occupied 1", ""},
 			{"Light level","lightlevel 1", ""},
@@ -190,12 +200,41 @@ public class MainActivity extends Activity {
 		    {"Right light", "periodic status", ""}};
 	
 		private static String[][] hall = {
-			{"Letterbox", "switch 1 status",""}};
+			{"Letterbox", "switch 1 status",""},
+			{"Temperature", "pihall temperature",""}};
+		
+		private static String[][] landing = {
+			{"Temperature", "temperature 1",""}};
+		
+		private static String[][] utilityRoom = {
+			{"Temperature", "esputil temperature",""}};
+		
+		private static String[][] kitchen = {
+			{"Temperature", "temperature 2", ""},
+			{"Light level", "lightlevel 2", ""}};
+		
+		private static String[][] secondBedroom = {
+			{"Temperature", "espsecond temperature",""}};
+		
+		private static String[][] bathroom = {
+			{"Temperature", "enoceant temperature",""}};
 		
 		private static String[][] command = {
 			{"Command", "",""}};
 		
-		static String[][][] cmds = {livingRoom, electricity, masterBedroom, hall, command};
+		static String[][][] cmds = {livingRoom, electricity, masterBedroom, hall, landing, utilityRoom, kitchen, 
+			                        secondBedroom, bathroom, command};
+		
+		static final int LIVING_ROOM = 0;
+		static final int ELECTRICITY = 1;
+		static final int MASTER_BEDROOM = 2;
+		static final int HALL = 3;
+		static final int LANDING = 4;
+		static final int UTILITY_ROOM = 5;
+		static final int KITCHEN = 6;
+		static final int SECOND_BEDROOM = 7;
+		static final int BATHROOM= 8;
+		static final int COMMAND = 9;
 
 		/**
 		 * Returns a new instance of this fragment for the given section number.
@@ -299,13 +338,13 @@ public class MainActivity extends Activity {
 		public void onClick(View v) {
 			if (v.getId() == R.id.go) {
 				String value = command.getText().toString();
-				HouseCommand house = (HouseCommand) new HouseCommand().execute(value,"0", "4");
+				HouseCommand house = (HouseCommand) new HouseCommand().execute(value,"0", "" + DataTableFragment.COMMAND);
 				
 				try {
 					house.get();
 				} catch (InterruptedException | ExecutionException e) {}
 				
-				Toast.makeText(context, "Reply to " + value + " is " + DataTableFragment.cmds[4][0][2], Toast.LENGTH_LONG).show();
+				Toast.makeText(context, "Reply to " + value + " is " + DataTableFragment.cmds[DataTableFragment.COMMAND][0][2], Toast.LENGTH_LONG).show();
 			}
 		}
 	}
@@ -372,13 +411,13 @@ public class MainActivity extends Activity {
 	            	//output for debugging
 	            	Log.v(LOG_TAG, "chosen: "+wordChosen);
 	            	
-	    			HouseCommand house = (HouseCommand) new HouseCommand().execute(wordChosen,"0", "4");
+	    			HouseCommand house = (HouseCommand) new HouseCommand().execute(wordChosen,"0", "" + DataTableFragment.COMMAND);
 	    			
 	    			try {
 	    				house.get();
 	    			} catch (InterruptedException | ExecutionException e) {}
 	    			
-	    			Toast.makeText(context, "Reply is " + DataTableFragment.cmds[4][0][2], Toast.LENGTH_LONG).show();            }
+	    			Toast.makeText(context, "Reply is " + DataTableFragment.cmds[DataTableFragment.COMMAND][0][2], Toast.LENGTH_LONG).show();            }
 	        });
 
 			return rootView;
@@ -699,13 +738,13 @@ public class MainActivity extends Activity {
 				value = "vt subtitles";
 			}
 				
-			HouseCommand house = (HouseCommand) new HouseCommand().execute(value,"0", "4");
+			HouseCommand house = (HouseCommand) new HouseCommand().execute(value,"0", "" + DataTableFragment.COMMAND);
 			
 			try {
 				house.get();
 			} catch (InterruptedException | ExecutionException e) {}
 			
-			Toast.makeText(context, "Reply is " + DataTableFragment.cmds[4][0][2], Toast.LENGTH_LONG).show();
+			Toast.makeText(context, "Reply is " + DataTableFragment.cmds[DataTableFragment.COMMAND][0][2], Toast.LENGTH_LONG).show();
 		}
 	}
 	
@@ -715,7 +754,18 @@ public class MainActivity extends Activity {
 	public static class RoomFragment extends Fragment {
 		private static final String ARG_SECTION_NUMBER = "section_number";
 		private Context context;
-		private int[] temps = new int[9];
+		private static final int NUM_ROOMS = 9;
+		private float[] temps = new float[NUM_ROOMS];
+		
+		private static final int MASTER_BEDROOM = 0;
+		private static final int SECOND_BEDROOM = 1;
+		private static final int LANDING = 2;
+		private static final int BATHROOM = 3;
+		private static final int LIVING_ROOM = 4;
+		private static final int KITCHEN = 5;
+		private static final int HALL = 6;
+		private static final int DINING_ROOM = 7;
+		private static final int UTILITY_ROOM = 8;
 		
 		public static RoomFragment newInstance(int sectionNumber) {
 			RoomFragment fragment = new RoomFragment();
@@ -732,9 +782,16 @@ public class MainActivity extends Activity {
 					false);	
 			context = container.getContext();
 			
-			temps[0] = Integer.parseInt(MainActivity.DataTableFragment.cmds[2][0][2]);
-			temps[4] = Integer.parseInt(MainActivity.DataTableFragment.cmds[0][0][2]);
-			temps[5] = Integer.parseInt(MainActivity.DataTableFragment.cmds[0][1][2]);
+			try {
+				temps[MASTER_BEDROOM] = Float.parseFloat(MainActivity.DataTableFragment.cmds[DataTableFragment.MASTER_BEDROOM][0][2]);
+				temps[LIVING_ROOM] = Float.parseFloat(MainActivity.DataTableFragment.cmds[DataTableFragment.LIVING_ROOM][0][2]);
+				temps[KITCHEN] = Float.parseFloat(MainActivity.DataTableFragment.cmds[DataTableFragment.LIVING_ROOM][1][2]);
+				temps[HALL] = Float.parseFloat(MainActivity.DataTableFragment.cmds[DataTableFragment.HALL][1][2]);
+				temps[LANDING] = Float.parseFloat(MainActivity.DataTableFragment.cmds[DataTableFragment.LANDING][0][2]);
+				temps[UTILITY_ROOM] = Float.parseFloat(MainActivity.DataTableFragment.cmds[DataTableFragment.UTILITY_ROOM][0][2]);
+				temps[BATHROOM] = Float.parseFloat(MainActivity.DataTableFragment.cmds[DataTableFragment.BATHROOM][0][2]);
+				temps[SECOND_BEDROOM] = Float.parseFloat(MainActivity.DataTableFragment.cmds[DataTableFragment.SECOND_BEDROOM][0][2]);
+			} catch (Exception e) {}
 			
 			GridView gridview = (GridView) rootView.findViewById(R.id.gridview);
 		    gridview.setAdapter(new TextAdapter(context, dm, temps));

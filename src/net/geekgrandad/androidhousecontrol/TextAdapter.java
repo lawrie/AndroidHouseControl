@@ -1,6 +1,5 @@
 package net.geekgrandad.androidhousecontrol;
 
-import android.R.color;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.DisplayMetrics;
@@ -16,11 +15,11 @@ public class TextAdapter extends BaseAdapter {
     private Context context;
     private DisplayMetrics dm;
     private String[] texts = {
-    		"Master\nBedroom", "Spare\nBedroom", "Landing\n", "Bathroom\n", "Living\nRoom", 
+    		"Master\nBedroom", "Second\nBedroom", "Landing\n", "Bathroom\n", "Living\nRoom", 
     		"Kitchen\n", "Hall\n", "Dining\nRoom", "Utility\nRoom"};
-    private int[] temps;
+    private float[] temps;
 
-    public TextAdapter(Context context, DisplayMetrics dm, int[] temps) {
+    public TextAdapter(Context context, DisplayMetrics dm, float[] temps) {
         this.context = context;
         this.dm = dm;
         this.temps = temps;
